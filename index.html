@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b18">
+<meta name="description" content="KIRUTO - اختبار مدى معرفتك بالأشخاص القريبين منك">
+<title>KIRUTO — هل تعرفهم حقًا؟</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"><span></span><span></span><span></span></div>
+<header>
+  <a class="brand" href="#" onclick="goHome();return false;"><b>✦</b> KIRUTO</a>
+  <button class="theme" onclick="toggleTheme()" aria-label="تغيير المظهر">☾</button>
+</header>
+
+<main>
+<section id="home" class="screen active">
+  <div class="hero">
+    <div class="eyebrow">اختبار اجتماعي • 20 سؤالًا</div>
+    <h1>KIRUTO</h1>
+    <h2>كم تعرف حقًا عن الأشخاص القريبين منك؟</h2>
+    <p>أجب عن 20 سؤالًا حسّاسًا وممتعًا، واكتشف مدى معرفتك بالشخص الذي تظن أنك تعرفه جيدًا.</p>
+    <button class="primary" onclick="start()">ابدأ الاختبار <span>←</span></button>
+  </div>
+  <div class="features">
+    <div><i>🔒</i><b>خصوصية أولًا</b><small>لا نطلب حسابًا ولا نرسل إجاباتك.</small></div>
+    <div><i>✦</i><b>20 سؤالًا</b><small>أسئلة عن الشخصية والمشاعر والعادات.</small></div>
+    <div><i>♥</i><b>نتيجة دقيقة</b><small>نسبة توافق ورسالة تناسب نتيجتك.</small></div>
+  </div>
+</section>
+
+<section id="name" class="screen">
+  <div class="card narrow">
+    <div class="icon">♧</div>
+    <h2>ابدأ الاختبار</h2>
+    <p>اكتب اسم الشخص الذي تريد اختبار مدى معرفتك به.</p>
+    <input id="person" maxlength="30" placeholder="مثال: صديقي، أختي، أحمد..." autocomplete="off">
+    <button class="primary full" onclick="beginQuestions()">ابدأ الآن <span>←</span></button>
+    <small class="hint">الاسم يظهر لك فقط ولا يتم حفظه.</small>
+  </div>
+</section>
+
+<section id="quiz" class="screen">
+  <div class="quiz-top">
+    <span id="counter">السؤال 1 من 20</span>
+    <span id="percent">5%</span>
+  </div>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="card">
+    <div class="qnum" id="qnum">01</div>
+    <h2 id="question"></h2>
+    <div id="answers" class="answers"></div>
+    <div class="nav">
+      <button class="ghost" id="prev" onclick="prevQuestion()">السابق</button>
+      <button class="primary" id="next" onclick="nextQuestion()">التالي <span>←</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="result" class="screen">
+  <div class="card result-card">
+    <div class="eyebrow">النتيجة النهائية</div>
+    <h2>مدى معرفتك بـ <span id="resultName"></span></h2>
+    <div class="score-ring"><div><strong id="score">0%</strong><small>نسبة التوافق</small></div></div>
+    <h3 id="resultTitle"></h3>
+    <p id="resultText"></p>
+    <div class="actions">
+      <button class="primary" onclick="shareResult()">مشاركة النتيجة ↗</button>
+      <button class="ghost" onclick="start()">إعادة الاختبار</button>
+    </div>
+  </div>
+  <div class="card details">
+    <h3>تذكّر</h3>
+    <p>هذه النتيجة للمتعة فقط، وليست حكمًا حقيقيًا على علاقتك بالشخص. بعض الأسئلة قد تكون شخصية؛ لا تشارك معلومات لا تريد كشفها.</p>
+  </div>
+</section>
+</main>
+
+<footer><b>✦ KIRUTO</b><span>اكتشف ما لا يُقال...</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
